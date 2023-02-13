@@ -142,11 +142,11 @@ def chatbot(update: Update, context: CallbackContext):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://itsprodev.cf/chatbot/SOME1HING.php?api=' + api + '&message=' + Message)
+        kukiurl = requests.get('https://itsprodev.cf/chatbot/SOME1HING.php?api/apikey/SOME1HING_privet_990022/Chika/Yonko/message={Exon)
         Kuki = json.loads(kukiurl.text)
         kuki = Kuki['reply']
-        sleep(0.3)
-        message.reply_text(kuki, timeout=60)
+        sleep(0.5)
+        message.reply_text(result)
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
