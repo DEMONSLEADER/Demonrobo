@@ -64,7 +64,7 @@ def awake(update: Update, context: CallbackContext):
 
 ⚪ My Owner : <a href="https://t.me/{OWNER_USERNAME}">{OWNER_USERNAME}</a>
 
-⚪ Developer : <a href="https://t.me/YeahKakashi">{Kakashi}</a></b>
+⚪ Developer : YeahKakashi
 
     """
     if NETWORK:
