@@ -134,17 +134,18 @@ def chatbot(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     bot = context.bot
     is_kuki = sql.is_kuki(chat_id)
-    if not is_kuki:
+    if is_kuki:
         return
-	
+
     if message.text and not message.document:
         if not kuki_message(context, message):
             return
-        Message = message.text
+        Exon = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://itsprodev.cf/chatbot/SOME1HING.php?api/apikey/SOME1HING_privet_990022/Chika/Yonko/message={Exon')
-        Kuki = json.loads(kukiurl.text)
-        kuki = Kuki['reply']
+        url = f"https://merissachatbot.tk/api/apikey=5298587903-MERISSAZr1ugo5TI2/Chika/Yonko/message={Exon}"
+        request = requests.get(url)
+        results = json.loads(request.text)
+        result = results["reply"]
         sleep(0.5)
         message.reply_text(result)
 
