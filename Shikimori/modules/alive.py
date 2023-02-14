@@ -35,7 +35,7 @@ from Shikimori import ALIVE_MEDIA, UPDATE_CHANNEL, SUPPORT_CHAT, OWNER_USERNAME,
 from Shikimori.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
-
+KIRITO = "🪬 ZoRo 🪬"
 bot_name = f"{dispatcher.bot.first_name}"
 
 ALIVE_ID = ALIVE_MEDIA.split(".")
@@ -64,9 +64,9 @@ def awake(update: Update, context: CallbackContext):
 
 ⚪ My Owner : <a href="https://t.me/{OWNER_USERNAME}">{OWNER_USERNAME}</a></b>
 
-⚪ My dev YeahKakashi
+⚪ Developer : <a href="https://t.me/Kirito1250">{KIRITO}</a></b>
 
-⚪ Zorri sucks 😤
+⚪ Chutiya : Yeah Kakashi
     """
     if NETWORK:
         TEXT = TEXT + f'\n⚪ <b>I am Powered by : <a href="https://t.me/{NETWORK_USERNAME}">{NETWORK}</a>\n\n' + 'Thanks For Adding Me Here ❤️</b>'
