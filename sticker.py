@@ -145,7 +145,7 @@ def kang(update: Update, context: CallbackContext):
             kang_file.download("kangsticker.webm")
         elif is_gif:
             kang_file.download("kang.mp4")
-            convert_gif("kang.mp4")
+            # convert_gif("kang.mp4")
 
         if args:
             sticker_emoji = str(args[0])
