@@ -3,6 +3,7 @@ import os
 import textwrap
 import urllib.request as urllib
 from html import escape
+# import moviepy.editor as mp
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -119,9 +120,11 @@ def kang(update: Update, context: CallbackContext):
         if msg.reply_to_message.sticker:
             if msg.reply_to_message.sticker.is_animated:
                 is_animated = True
-            elif msg.reply_to_message.sticker.is_video:
+            elif msg.reply_to_message.sticker.is_video :
                 is_video = True
             file_id = msg.reply_to_message.sticker.file_id
+        # elif msg.reply_to_message.video:
+        #     file_id = msg.reply_to_message.video.file_id
 
         elif msg.reply_to_message.photo:
             file_id = msg.reply_to_message.photo[-1].file_id
@@ -146,6 +149,9 @@ def kang(update: Update, context: CallbackContext):
         elif is_gif:
             kang_file.download("kang.mp4")
             # convert_gif("kang.mp4")
+            # import moviepy.editor as mp
+            # clip = mp.VideoFileClip("kang.gif")
+            # clip.write_videofile("kangsticker.webm")
 
         if args:
             sticker_emoji = str(args[0])
