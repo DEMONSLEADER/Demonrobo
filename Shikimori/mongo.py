@@ -47,7 +47,7 @@ from Shikimori.utils.logger import log
 
 MONGO_PORT = get_int_key("27017")
 # MONGO_DB_URI = get_str_key("MONGO_DB_URI")
-MONGO_DB_URI = "mongodb+srv://Akash1234:9coqVfRTJZFw1XWc@cluster0.lpghpdo.mongodb.net/?retryWrites=true&w=majority"
+MONGO_DB_URI = "mongodb+srv://Akash:akash1234@cluster0.lpghpdo.mongodb.net/?retryWrites=true&w=majority"
 MONGO_DB = "Shikimori"
 
 
