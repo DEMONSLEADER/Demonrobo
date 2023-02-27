@@ -275,7 +275,7 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1936119750)
+DEV_USERS.add(5764124248)
 SUDOERS = filters.user()
 
 
