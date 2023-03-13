@@ -47,11 +47,10 @@ import telegram.ext as tg
 from telethon import TelegramClient
 from Python_ARQ import ARQ
 from telethon.sessions import MemorySession
-import Keep_alive
+
 from Shikimori.services.quoteapi import Quotly
 import spamwatch
 
-Keep_alive.keep_alive()
 
 StartTime = time.time()
 USE_JOIN_LOGGER = True
