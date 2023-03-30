@@ -1,4 +1,4 @@
- pyrogram import filters
+from pyrogram import filters
 from Shikimori import pbot as app
 from pyrogram.types import Message
 from telegraph import upload_file
