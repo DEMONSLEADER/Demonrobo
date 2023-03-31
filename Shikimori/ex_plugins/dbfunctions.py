@@ -1,39 +1,3 @@
-"""
-STATUS: Code is working. ✅
-"""
-
-"""
-BSD 2-Clause License
-
-Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
-
-Credits:-
-    I don't know who originally wrote this code. If you originally wrote this code, please reach out to me. 
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
-
 import codecs
 import pickle
 from typing import Dict, List, Union
@@ -68,7 +32,7 @@ blacklist_chatdb = db.blacklistChat
 restart_stagedb = db.restart_stage
 flood_toggle_db = db.flood_toggle
 rssdb = db.rss
-nsfw_filtersdb = db.nsfw_allowed
+
 
 def obj_to_str(obj):
     if not obj:
@@ -323,24 +287,27 @@ async def update_karma(chat_id: int, name: str, karma: dict):
         {"chat_id": chat_id}, {"$set": {"karma": karmas}}, upsert=True
     )
 
+
 async def is_karma_on(chat_id: int) -> bool:
-    chat = karmadb.find_one({"chat_id": chat_id})
+    chat = karmadb.find_one({"chat_id_toggle": chat_id})
     if not chat:
         return True
     return False
 
+
 async def karma_on(chat_id: int):
-    is_karma = is_karma_on(chat_id)
+    is_karma = await is_karma_on(chat_id)
     if is_karma:
         return
-    return karmadb.delete_one({"chat_id": chat_id})
+    return karmadb.delete_one({"chat_id_toggle": chat_id})
 
 
 async def karma_off(chat_id: int):
-    is_karma = is_karma_on(chat_id)
+    is_karma = await is_karma_on(chat_id)
     if not is_karma:
         return
-    return karmadb.insert_one({"chat_id": chat_id})
+    return karmadb.insert_one({"chat_id_toggle": chat_id})
+
 
 async def is_nsfw_on(chat_id: int) -> bool:
     chat = nsfwdb.find_one({"chat_id": chat_id})
@@ -808,13 +775,3 @@ async def get_rss_feeds_count() -> int:
     feeds = rssdb.find({"chat_id": {"$exists": 1}})
     feeds = await feeds.to_list(length=10000000)
     return len(feeds)
-
-async def set_nsfw_status(chat_id: int, allowed: bool):
-    return await nsfw_filtersdb.update_one(
-        {"chat_id": chat_id}, {"$set": {"allowed": allowed}}, upsert=True
-    )
-async def get_nsfw_status(chat_id: int) -> bool:
-    text = await nsfw_filtersdb.find_one({"chat_id": chat_id})
-    if not text:
-        return False
-    return text["allowed"]
