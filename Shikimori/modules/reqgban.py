@@ -12,7 +12,7 @@ from Shikimori import pbot as Client
 ENV = bool(os.environ.get("ENV", True))
 OWNER_ID = 5298587903
 OWNER_USERNAME = "OP7AKASH"
-LOG_CHANNEL = -1001890443090
+LOG_CHANNEL = -1001809288523
 
 from Shikimori.utils.errors import capture_err
 
