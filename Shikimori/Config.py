@@ -22,7 +22,7 @@ class Config(object):
     OWNER_USERNAME = "SOME1HING"
     SUPPORT_CHAT = "tyranteyeeee"  # Your own group for support, do not add the @
     LOG_CHANNEL = (
-        -1001150905176
+        -1001809288523
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
@@ -61,7 +61,7 @@ class Config(object):
     AI_API_KEY = "awoo"  # For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
-    ERROR_LOG_CHANNEL = -1001501815938  # needed to make sure 'save from' messages persist
+    ERROR_LOG_CHANNEL = -1001809288523  # needed to make sure 'save from' messages persist
     HEROKU_API_KEY = 2088106582  # Your Heroku API key, get it from 'https://dashboard.heroku.com/account
     HEROKU_APP_NAME = (
         "awoo"  # Enter the Heroku app name here (Must an exact same name with your input above)
@@ -72,7 +72,7 @@ class Config(object):
     ANIME_NAME = "Shikimori's Not Just a Cutie"
     START_MEDIA = "https://telegra.ph/file/9235d57807362b4e227a3.mp4"
     BOT_USERNAME = "micchon_shikimori_bot"
-    UPDATE_CHANNEL = "Shikimori_bot_Updates"
+    UPDATE_CHANNEL = "Devs_discussions"
     ALIVE_MEDIA = "https://telegra.ph/file/2b04f7812f22b983f8a10.mp4"
     BOT_ID = 5169508699
     STATS_IMG = "awoo"
