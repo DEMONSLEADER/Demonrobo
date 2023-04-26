@@ -72,7 +72,7 @@ class Config(object):
     ANIME_NAME = "Shikimori's Not Just a Cutie"
     START_MEDIA = "https://telegra.ph/file/9235d57807362b4e227a3.mp4"
     BOT_USERNAME = "micchon_shikimori_bot"
-    UPDATE_CHANNEL = "Devs_discussions"
+    UPDATE_CHANNEL = "yonkoxnetwork"
     ALIVE_MEDIA = "https://telegra.ph/file/2b04f7812f22b983f8a10.mp4"
     BOT_ID = 5169508699
     STATS_IMG = "awoo"
