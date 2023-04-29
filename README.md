@@ -14,10 +14,10 @@ Reach out to the maintainer at one of the following places:
 
 - Contact options listed on [this GitHub profile](https://github.com/DEMONSLEADER)
 
-- [Telegram Support](https://t.me/YonkoXHQ) Click here for any support/queries.
+- [Telegram Support](https://t.me/axpsupport) Click here for any support/queries.
 
 If you want to say **thank you** or/and support active development of Chika Fujiwara Bot:
-# Join [@Yonkōxhq](https://t.me/YonkoXHQ) Best Telegram Network
+# Join [@macNetwork](https://t.me/macnetwork) Best Telegram Network
 </h2>
 
 <p align="center">
