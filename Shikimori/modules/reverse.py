@@ -9,7 +9,7 @@ from Shikimori import dispatcher
 
 
 api_key = "blue-api-testing"
-url = 'https://blue-api.vercel.app/reverse'
+url = 'https://sasta.tk/google_reverse'
 
 def reverse(update, context):
     message = update.effective_message
