@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 from pyrogram.types import (InlineKeyboardMarkup, InlineKeyboardButton, Message)
 import httpx
 
-from YourRobot import pbot
+from Shikimori import pbot
 
 API_URL = 'https://sasta.tk/google_reverse'
 
