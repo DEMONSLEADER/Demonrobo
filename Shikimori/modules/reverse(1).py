@@ -15,7 +15,7 @@ from Shikimori import pbot
 API_URL = 'https://sasta.tk/google_reverse'
 
 class STRINGS:
-    REPLY_TO_MEDIA = 'Reply to a message having photo, sticker or document.'
+    REPLY_TO_MEDIA = 'Reply to a message having photo, sticker and document.'
     THESE_MEDIA_TYPES_ONLY = 'Only <b>photo</b>, <b>sticker</b> and <b>document</b> media types are allowed.'
     GIF_NOT_SUPPORTED = 'GIF reverse is currently not available.'
     DOWNLOADING_MEDIA = '<b>• Downloading media...</b>'
