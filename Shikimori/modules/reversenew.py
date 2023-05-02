@@ -79,44 +79,47 @@ async def get_file_id_from_message(message):
     
 
 
-@app.on_message(filters.command(["pp","grs","reverse","p","s"]) & filters.group & filters.private)
+@app.on_message(filters.command(["pp","grs","reverse","p","s"]))
 async def _reverse(_,msg):
-    text = await msg.reply("Downloading Media To My Locals...")
-    file_id = await get_file_id_from_message(msg)
-    if not file_id:
-        return await text.edit("Reply to a Photo or sticker")
-    await text.edit("Searching...")    
-    result = await Sauce(bot_token,file_id)
-    if not result["output"]:
-        return await text.edit("Couldn't find anything")
-    await text.edit("Gathering Sauce...")
-    resultsss = f'Sauce: <code>{result["output"]}</code>'
-    await text.edit(f'Sauce: <code>{result["output"]}</code>',reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Link",url=result["similar"])]]))
-   
-    # source = str(trans.detect(str(result["output"])))
-    
-    if not isEnglish(result['output']):
-        source = trans.detect(result['output'])
-        await text.edit(f"{resultsss}\nAnother Language Detected Translating...")
-        dest = "en"
-        translation = trans(result['output'], sourcelang=source, targetlang=dest)
-        # print(translation.text)
-        # print(mesg)
-        # print(str(source))
-        await text.edit(f"{resultsss}\n\nWait Heres The Translation for You!\nTranslation : <code>{translation.text}</code>")
+      if message.chat.type != ChatType.PRIVATE:
+          return
+      else:
+          text = await msg.reply("Downloading Media To My Locals...")
+          file_id = await get_file_id_from_message(msg)
+          if not file_id:
+              return await text.edit("Reply to a Photo or sticker")
+          await text.edit("Searching...")    
+          result = await Sauce(bot_token,file_id)
+          if not result["output"]:
+              return await text.edit("Couldn't find anything")
+          await text.edit("Gathering Sauce...")
+          resultsss = f'Sauce: <code>{result["output"]}</code>'
+          await text.edit(f'Sauce: <code>{result["output"]}</code>',reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Link",url=result["similar"])]]))
 
-    else :
-        pass
-    # if source != "en":
-    #     await m.edit(f"{text}\nAnother Language Detected Translating...")
-    #     dest = "en"
-    #     translation = trans(text1, sourcelang=source, targetlang=dest)
-    #     # print(translation.text)
-    #     # print(mesg)
-    #     # print(str(source))
-    #     await m.edit(f"{text}\nTranslation : <code>{translation.text}</code>")
+          # source = str(trans.detect(str(result["output"])))
 
-    # else :
-    #     pass
-                      
+          if not isEnglish(result['output']):
+              source = trans.detect(result['output'])
+              await text.edit(f"{resultsss}\nAnother Language Detected Translating...")
+              dest = "en"
+              translation = trans(result['output'], sourcelang=source, targetlang=dest)
+              # print(translation.text)
+              # print(mesg)
+              # print(str(source))
+              await text.edit(f"{resultsss}\n\nWait Heres The Translation for You!\nTranslation : <code>{translation.text}</code>")
+
+          else :
+              pass
+          # if source != "en":
+          #     await m.edit(f"{text}\nAnother Language Detected Translating...")
+          #     dest = "en"
+          #     translation = trans(text1, sourcelang=source, targetlang=dest)
+          #     # print(translation.text)
+          #     # print(mesg)
+          #     # print(str(source))
+          #     await m.edit(f"{text}\nTranslation : <code>{translation.text}</code>")
+
+          # else :
+          #     pass
+
  
