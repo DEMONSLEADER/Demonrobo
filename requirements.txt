@@ -93,3 +93,4 @@ yt_dlp
 pytimeparse
 youtube_dl
 moviepy
+Unidecode==1.3.6
