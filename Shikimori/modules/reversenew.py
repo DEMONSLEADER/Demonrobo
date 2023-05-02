@@ -1,5 +1,5 @@
-from NekoRobot import pgram as app
-from NekoRobot import TOKEN as bot_token
+from Shikimori import pbot as app
+from Shikimori import TOKEN as bot_token
 from pyrogram import filters
 import requests
 from urllib.parse import quote_plus
