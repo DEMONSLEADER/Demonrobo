@@ -4,7 +4,7 @@ from pyrogram import filters
 import requests
 from urllib.parse import quote_plus
 from bs4 import BeautifulSoup
-from Shikimori import unidecode
+from unidecode import unidecode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
 
 from gpytranslate import SyncTranslator
