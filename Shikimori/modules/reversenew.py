@@ -79,7 +79,7 @@ async def get_file_id_from_message(message):
     
 
 
-@app.on_message(filters.command(["pp","grs","reverse","p","s"]))
+@app.on_message(filters.command(["pp","grs","reverse","p","s"] & filters.group & filters.private))
 async def _reverse(_,msg):
     text = await msg.reply("Downloading Media To My Locals...")
     file_id = await get_file_id_from_message(msg)
