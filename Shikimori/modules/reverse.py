@@ -1,3 +1,5 @@
+#Credits :- @ImmortalsXKing
+
 from Shikimori import pbot as app
 from Shikimori import TOKEN as bot_token
 from pyrogram import filters
@@ -68,7 +70,7 @@ async def get_file_id_from_message(msg):
 
 @app.on_message(filters.command(["pp","grs","reverse","p"]))
 async def _reverse(_,msg):
-	if msg.chat.type != ChatType.PRIVATE:
+  if msg.chat.type != ChatType.PRIVATE:
       text = await msg.reply("**⇢ wait a sec...**")
       file_id = await get_file_id_from_message(msg)
       if not file_id:
@@ -78,8 +80,8 @@ async def _reverse(_,msg):
       if not result["output"]:
           return await text.edit("Couldn't find anything")
       await text.edit(f'[{result["output"]}]({result["similar"]})\n\n⇢**Creator**:- @ImmortalsXKing',reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Site",url=result["similar"])]]))
-   else:
-   	text = await msg.reply("**⇢ wait a sec...**")
+  else:
+      text = await msg.reply("**⇢ wait a sec...**")
       file_id = await get_file_id_from_message(msg)
       if not file_id:
           return await text.edit("**reply to media!**")
