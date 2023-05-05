@@ -68,7 +68,7 @@ def awake(update: Update, context: CallbackContext):
 
 ⚪ I'm alive & Working Fine. Any doubt
 
-⚪ My Owner : <a href="https://t.me/{OWNER_USERNAME}">{OWNER_USERNAME}</a>
+⚪ My Husband : <a href="https://t.me/{OWNER_USERNAME}">{OWNER_USERNAME}</a>
 
 ⚪ Developer : YeahKakashi
 
