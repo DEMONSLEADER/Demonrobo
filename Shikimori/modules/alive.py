@@ -64,13 +64,13 @@ def awake(update: Update, context: CallbackContext):
     
 
     TEXT = f"""
-    Hey darling <a href="tg://user?id={user.id}">{first_name}</a>, I'm {bot_name} Robot.
+    Hey hotie <a href="tg://user?id={user.id}">{first_name}</a>, I'm {bot_name} Robot.
 
 ⚪ I'm alive & Working Fine. Any doubt
 
 ⚪ My Husband : <a href="https://t.me/{OWNER_USERNAME}">{OWNER_USERNAME}</a>
 
-⚪ Developer : YeahKakashi
+⚪ Developer : unique devs
 
     """
     if NETWORK:
