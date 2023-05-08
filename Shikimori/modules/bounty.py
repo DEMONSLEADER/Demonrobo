@@ -15,7 +15,7 @@ from pyrogram.types import (InlineKeyboardMarkup, InlineKeyboardButton, Message)
 import httpx
 
 # Replace `YourBot` to your actual telegram bot module and import pyrogram client from it.
-from YourBot import pbot
+from Shikimori import pbot
 
 API_URL = 'https://sasta.tk/bounty'
 
