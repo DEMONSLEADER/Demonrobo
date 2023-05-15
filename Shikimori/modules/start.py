@@ -126,14 +126,14 @@ def start(update: Update, context: CallbackContext):
     else:
         start_buttons = [
                  [
-                    InlineKeyboardButton(text="🚨Support Grp", url=f"https://t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton(text="❗Updates", url=f"https://t.me/{UPDATE_CHANNEL}")
+                    InlineKeyboardButton(text="💞𝕊𝕦𝕡𝕡𝕠𝕣𝕥 𝕘𝕣𝕡", url=f"https://t.me/{SUPPORT_CHAT}"),
+                    InlineKeyboardButton(text=" 🆙𝕌𝕡𝕕𝕒𝕥𝕖𝕤", url=f"https://t.me/{UPDATE_CHANNEL}")
                  ]
                 ]
         chat_id = update.effective_chat.id
         first_name = update.effective_user.first_name
         chat_name = dispatcher.bot.getChat(chat_id).title
-        start_text= "*Hey {}, I'm here for you at {} since :* `{}`\n".format(escape_markdown(first_name), escape_markdown(chat_name), uptime)
+        start_text= "*ℍ𝕒𝕪 {}, 𝕀'𝕞 𝕗𝕠𝕣 𝕪𝕠𝕦 {} 𝕤𝕚𝕟𝕔𝕖 :* `{}`\n".format(escape_markdown(first_name), escape_markdown(chat_name), uptime)
         try:
             if start_id in ("jpeg", "jpg", "png"):
                 update.effective_message.reply_photo(
