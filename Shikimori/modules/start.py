@@ -62,7 +62,7 @@ PM_START_TEXT = f"""
 """
 
 HELP_STRINGS = """
-Click on the button bellow to get description about specifics command."""
+ℂ𝕝𝕚𝕔𝕜 𝕠𝕟 𝕥𝕙𝕖 𝕓𝕦𝕥𝕥𝕠𝕟 𝕓𝕖𝕝𝕠𝕨 𝕥𝕠 𝕘𝕖𝕥 𝕕𝕖𝕤𝕔𝕣𝕚𝕡𝕥𝕚𝕠𝕟 𝕒𝕓𝕠𝕦𝕥 𝕞𝕪 𝕤𝕡𝕖𝕔𝕚𝕗𝕚𝕔 𝕗𝕖𝕒𝕥𝕦𝕣𝕖𝕤."""
 
 buttons = [
     [
@@ -70,12 +70,12 @@ buttons = [
             text=f" Add {bot_name} to your Group", url=f"t.me/Chikaxprobot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="❓About", callback_data="Shikimori_"),
+        InlineKeyboardButton(text=" 💘𝔸𝕓𝕠𝕦𝕥", callback_data="Shikimori_"),
         InlineKeyboardButton(text=" 👒𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="🚨Support Grp", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(text="❗Updates", url=f"https://t.me/{UPDATE_CHANNEL}"),
+        InlineKeyboardButton(text="💞𝕊𝕦𝕡𝕡𝕠𝕣𝕥 𝕘𝕣𝕡", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="🆙 𝕌𝕡𝕕𝕒𝕥𝕖𝕤", url=f"https://t.me/{UPDATE_CHANNEL}"),
    
     ], 
 ]
