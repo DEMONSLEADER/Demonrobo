@@ -58,7 +58,7 @@ start_id = IMG_START[-1]
 PM_START_TEXT = f"""
 \nI am *{bot_name}* , a group management bot based on the anime *{ANIME_NAME}*![ ]({START_MEDIA})
 
-*Click on the Commands Button below to go through my commands.*
+*ℂ𝕝𝕚𝕔𝕜 𝕠𝕟 𝕥𝕙𝕖 𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤 𝕓𝕦𝕥𝕥𝕠𝕟 𝕓𝕖𝕝𝕠𝕨 𝕥𝕠 𝕔𝕙𝕖𝕔𝕜 𝕞𝕪 𝕗𝕖𝕒𝕥𝕦𝕣𝕖𝕤.*
 """
 
 HELP_STRINGS = """
@@ -71,7 +71,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="❓About", callback_data="Shikimori_"),
-        InlineKeyboardButton(text=" 💬Commands", callback_data="help_back"),
+        InlineKeyboardButton(text=" 👒𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="🚨Support Grp", url=f"https://t.me/{SUPPORT_CHAT}"),
