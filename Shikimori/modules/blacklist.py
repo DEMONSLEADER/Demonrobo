@@ -264,7 +264,7 @@ def blacklist_mode(update, context):
         if args[0].lower() in ["off", "nothing", "no"]:
             settypeblacklist = "do nothing"
             sql.set_blacklist_strength(chat_id, 0, "0")
-        elif args[0].lower() in ["del", "delete"]:
+        elif args[0].lower() in ["delete", "delete"]:
             settypeblacklist = "delete blacklisted message"
             sql.set_blacklist_strength(chat_id, 1, "0")
         elif args[0].lower() == "warn":
