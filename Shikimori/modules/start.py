@@ -1,35 +1,3 @@
-"""
-STATUS: Code is working. ✅
-"""
-
-"""
-BSD 2-Clause License
-
-Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
 
 import time
 import re
@@ -40,9 +8,7 @@ from Shikimori import (
     UPDATE_CHANNEL,
     SUPPORT_CHAT,
     dispatcher,
-    StartTime,
-    ANIME_NAME,
-    START_MEDIA,
+    StartTime
 )
 from Shikimori.modules.helper_funcs.misc import paginate_modules
 from Shikimori.modules.helper_funcs.chat_status import is_user_admin
@@ -51,14 +17,16 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import escape_markdown
 
 bot_name = f"{dispatcher.bot.first_name}"
-
+START_MEDIA = "https://telegra.ph/file/98bee495cac6bd0a9f9e1.jpg"
 IMG_START = START_MEDIA.split(".")
 start_id = IMG_START[-1]
 
 PM_START_TEXT = f"""
-\nI am *{bot_name}* , a group management bot based on the anime *{ANIME_NAME}*![ ]({START_MEDIA})
-
-*ℂ𝕝𝕚𝕔𝕜 𝕠𝕟 𝕥𝕙𝕖 𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤 𝕓𝕦𝕥𝕥𝕠𝕟 𝕓𝕖𝕝𝕠𝕨 𝕥𝕠 𝕔𝕙𝕖𝕔𝕜 𝕞𝕪 𝕗𝕖𝕒𝕥𝕦𝕣𝕖𝕤.*
+𝙸'𝚖 {bot_name} 𝙺𝚊𝚐𝚞𝚢𝚊 𝚂𝚊𝚖𝚊 𝙻𝚘𝚟𝚎 𝙸𝚜 𝚆𝚊𝚛 𝚋𝚊𝚜𝚎𝚍 𝚐𝚛𝚘𝚞𝚙 𝚖𝚊𝚗𝚊𝚐𝚎𝚖𝚎𝚗𝚝 𝚋𝚘𝚝.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+♡ 𝙸 𝚙𝚛𝚘𝚖𝚒𝚜𝚎 𝚝𝚘 𝚙𝚛𝚘𝚝𝚎𝚌𝚝 𝚢𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙 𝚊𝚝 𝚊𝚕𝚕 𝚌𝚘𝚜𝚝𝚜
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+𝙲𝚑𝚎𝚌𝚔𝚘𝚞𝚝 𝚖𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚋𝚢 𝚌𝚕𝚒𝚌𝚔𝚒𝚗𝚐 𝚋𝚎𝚕𝚘𝚠 𝚋𝚞𝚝𝚝𝚘𝚗𝚜.××
 """
 
 HELP_STRINGS = """
@@ -113,15 +81,13 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            hmm = "Hello *{}*! Nice to meet you!".format(escape_markdown(first_name))
+            hmm = "𝙺𝚘𝚗𝚒𝚌𝚑𝚒𝚠𝚊 {}".format(escape_markdown(first_name))
             HMM = hmm + PM_START_TEXT
 
-            update.effective_message.reply_text(
+            update.effective_message.reply_photo(
+                START_MEDIA,
                 HMM,                        
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
+                reply_markup=InlineKeyboardMarkup(buttons)
             )
     else:
         start_buttons = [
@@ -133,7 +99,7 @@ def start(update: Update, context: CallbackContext):
         chat_id = update.effective_chat.id
         first_name = update.effective_user.first_name
         chat_name = dispatcher.bot.getChat(chat_id).title
-        start_text= "*ℍ𝕒𝕪 {}, 𝕀'𝕞 𝕗𝕠𝕣 𝕪𝕠𝕦 {} 𝕤𝕚𝕟𝕔𝕖 :* `{}`\n".format(escape_markdown(first_name), escape_markdown(chat_name), uptime)
+        start_text= "Hello {}\nI Am 𝙰𝚕𝚒𝚟𝚎 𝚜𝚒𝚗𝚌𝚎: {}\n".format(escape_markdown(first_name), uptime)
         try:
             if start_id in ("jpeg", "jpg", "png"):
                 update.effective_message.reply_photo(
