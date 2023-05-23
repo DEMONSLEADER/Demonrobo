@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import openai
+import Shikimori 
 from telegram import Update
 from telegram.ext import Application, ContextTypes, Defaults
 
