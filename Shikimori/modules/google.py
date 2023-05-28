@@ -273,6 +273,5 @@ __help__ = """
  ❍ /reverse |pp |grs: Does a reverse image search of the media which it was replied to.
 
 """
-was replied to.
 
-"""
+
