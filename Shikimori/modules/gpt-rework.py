@@ -1,6 +1,6 @@
 import requests
 import json
-from Shikimori import pbot as app
+from Shikimori import pbot
 from pyrogram import filters , client
 from pyrogram.types import  Message
 from pyrogram.enums import ParseMode
