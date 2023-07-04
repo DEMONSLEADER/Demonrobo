@@ -7,7 +7,7 @@ import os
 import aiohttp
 import aiofiles
 from aiohttp import ContentTypeError
-from repo import pbot as app
+from Shikimori import pbot as app
 from pyrogram import filters
 
 def check_filename(filroid):
